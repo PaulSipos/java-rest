@@ -5,7 +5,7 @@
 
     <groupId>org.springframework</groupId>
     <artifactId>gs-rest-service</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.0.RELEASE</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -79,7 +79,7 @@
    </snapshotRepository>
 
    <repository>
-     <id>release</id>
+     <id>releases</id>
      <url>http://nexus.local:81/nexus/repository/maven-releases/</url>
    </repository>
    </distributionManagement>
