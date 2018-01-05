@@ -79,7 +79,7 @@
    </snapshotRepository>
 
    <repository>
-     <id>releases</id>
+     <id>release</id>
      <url>http://nexus.local:81/nexus/repository/maven-releases/</url>
    </repository>
    </distributionManagement>
