@@ -1,7 +1,8 @@
 #!/bin/bash
 
 JAVA_VERSION="1.8.0"
-APPLICATION_PACKAGE=gs-rest-service-0.2.0.jar
+APPLICATION_PACKAGE=gs-rest-service-0.2.0.RELEASE.jar
+http://nexus.local:81/nexus/repository/maven-releases/org/springframework/gs-rest-service/0.2.0.RELEASE/gs-rest-service-0.2.0.RELEASE.jar
 ENVIRONMENT=$1
 
 echo "Installing Java OpenJDK..."
@@ -9,7 +10,7 @@ yum list installed | grep java > /dev/null 2>&1
 if [ $? -eq 0 ]
 then
   echo "Already installed"
-else 
+else
   sudo yum -y install java-$JAVA_VERSION > /dev/null 2>&1
 fi
 echo "Done with Java"
@@ -29,7 +30,7 @@ rm /opt/gs-rest-service-*.jar
 
 
 echo "Downloading JAR file"
-wget http://192.168.56.15:8081/repository/maven-releases/org/springframework/gs-rest-service/0.2.0/$APPLICATION_PACKAGE  > /dev/null 2>&1
+wget http://nexus.local:81/repository/maven-releases/org/springframework/gs-rest-service/0.2.0.RELEASE/$APPLICATION_PACKAGE  > /dev/null 2>&1
 sudo mv $APPLICATION_PACKAGE /opt
 echo "Creating systemd file for application..."
 
@@ -56,11 +57,3 @@ sudo systemctl enable application
 sudo systemctl start application
 
 echo "Done"
-
-
-
-
-
-
-
-
